@@ -1,8 +1,7 @@
 =======
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This website allows us to manage invitations to our events.
 
 Things you may want to cover:
 

@@ -1,0 +1,59 @@
+.home-main{
+    align-items: stretch;
+    background-color: $principal-night;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .left{
+        @include center-flex-column;
+        height: 100%;
+        width: 45%;
+
+        .title{
+            color: $main-pink;
+            display: flex;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 50px;
+            justify-content: center;
+            letter-spacing: 1px;
+            width: 60%;
+        }
+        .slogan{
+        color: $main-white;
+        font-size: x-large;
+        letter-spacing: 1px;
+        margin: 0px 0px 50px 0px;
+        text-align: center;
+        width: 80%;
+        }
+
+        .btn{
+            height: 7%;
+            width: 50%;
+        }
+        
+        button{
+            background-color: $main-pink;
+            border-radius: 10px;
+            border: none;
+            color: $principal-night;
+            font-size: 20px;
+            font-weight: 400;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    
+    .right{
+        background-color: white;
+        width: 55%;
+
+        .img-home{
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+   
+}
