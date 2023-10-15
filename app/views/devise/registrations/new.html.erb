@@ -1,0 +1,51 @@
+ <%= render 'partials/navbar_devise' %>
+
+<main class="main-sign_up">
+  <div class="container-sign_up">
+    <h2>Crear Cuenta</h2>
+    <div class="container-form">
+      <img src="<%= asset_path('marco_devise.svg') %>" class="marco-sign_up" alt="Marco de contenido">
+      <div class="form-sign_up">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :Nombre %><br />
+          <%= f.text_field :name, autofocus: true, class:"field-text", autocomplete: "Nombre" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :Apellido %><br />
+          <%= f.text_field :last_name, autofocus: true, class:"field-text", autocomplete: "Apellidos" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :Correo_Electronico  %><br />
+          <%= f.email_field :email, autofocus: true, class:"field-text", autocomplete: "Correo" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :Contraseña %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:"field-text", placeholder: "6 caracteres minimo" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :Confirmar_contraseña %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"field-text" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Crear cuenta", class: "button" %>
+        </div>
+
+        <% end %>
+        
+        
+      </div>
+
+    </div>
+   <%= render "devise/shared/links" %>
+  </div>
+  
+
+</main>

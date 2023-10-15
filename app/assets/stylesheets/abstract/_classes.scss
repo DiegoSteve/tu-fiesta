@@ -1,7 +1,14 @@
-.button_to {
-    height: 100%;
-}
-
-.button_to:hover{
+.button:hover{
     transform: scale(1.05);
+}
+.button{
+    background-color: $main-pink;
+    border-radius: 10px;
+    border: none;
+    color: $principal-night;
+    font-size: 20px;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    font-family: "Renogare-Regular";
 }

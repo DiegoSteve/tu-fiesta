@@ -1,0 +1,47 @@
+<%= render 'partials/navbar_devise' %>
+<main class='main-sign_in'>
+  <div class="left">
+   <div class="container-sign_in">
+      <h2>Iniciar Sesion</h2>
+      <div class="container-form">
+       <img src="<%= asset_path('marco_devise.svg') %>" class="marco-sign_up" alt="Marco de contenido">
+       <div class="form-sign_in">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :correo %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :contraseña %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="field field-check">
+                <%= f.label :recordarme %>
+                <%= f.check_box :remember_me %> 
+              </div>
+            <% end %>
+
+            <div class="actions">
+              <%= f.submit "Log in", class: "button" %>
+            </div>
+
+            <% end %>
+        </div>
+          
+
+        <%= render "devise/shared/links" %>
+
+      </div>
+    </div>
+  </div>
+  <div class="right">
+        <%= image_tag ("photologin.png"), class:"img-home"%>
+  </div>
+
+</main>
+
+
+
