@@ -3,3 +3,7 @@
 @import 'abstract/classes';
 @import 'base/base';
 @import 'views/_home_index';
+@import 'components/_navbar_devise';
+@import 'views/devise/sign_in';
+@import 'views/devise/sign_up';
+@import 'components/navbar';

@@ -3,7 +3,9 @@
         <p class="title">Tu-fiesta</p>
         <p class="slogan">Convierte tu evento ideal en una realidad</p>
         <div class="btn">
-            <%= button_to 'Crear Evento', class: 'button-stand'%>
+            <%= form_tag new_user_session_path, method: :get do %>
+            <%= button_tag 'Crear Evento', type:"submit", class: 'button'%>
+            <% end %> 
         </div>
     </div>
     <div class="right">
