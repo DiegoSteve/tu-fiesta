@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice" >Inicio de Sesion Correctamente<%= notice %></p>
 
-<h1>Events</h1>
+<div class="container-events">
+  <div class="left">
+    <h1 class="title-event">Bienvenidos</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis rem dolorem eaque tempore quam commodi deserunt ipsam voluptatibus autem quisquam amet assumenda sapiente, mollitia culpa accusantium modi molestias eius.</p>
 
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
+    <div id="events">
+      <% @events.each do |event| %>
+        <%= render event %>
+        <p>
+          <%= link_to "Show this event", event %>
+        </p>
+      <% end %>
+    </div>
+
+    <%= link_to "Crear Evento", new_event_path, class:"button button-event" %>
+  </div>
+  <div class="right">
+    <%= image_tag ("photohomepage.png"), class:"img-home"%>
+  </div>
 </div>
-
-<%= link_to "New event", new_event_path %>
+  

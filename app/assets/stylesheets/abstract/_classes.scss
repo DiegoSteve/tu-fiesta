@@ -12,3 +12,14 @@
     width: 100%;
     font-family: "Renogare-Regular";
 }
+
+.notice, .alert {
+    animation-duration: 5000ms;
+    height: 3%;
+    width: 100%;
+    background-color: $correct-blue;
+    color: $white;
+    animation-fill-mode: forwards;
+    animation-name: msg-animation;
+    display: flex;
+}

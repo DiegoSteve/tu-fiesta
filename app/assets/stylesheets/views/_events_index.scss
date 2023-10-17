@@ -1,0 +1,39 @@
+.container-events {
+    align-items: stretch;
+    background-color: $main-white;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .left {
+        height: 75%;
+        width: 47%;
+        @include center-flex-column;
+
+        .title-event {
+            font-family: "berlinsans";
+            color: $main-pink;
+        }
+
+        p {
+            text-align: justify;
+            padding: 5% 10% 10% 10%;
+        }
+
+        .button{
+            height: 7%;
+            width: 40%;
+            @include center-flex-column
+        }
+    }
+
+    .right {
+        width: 53%;
+        height: 100%;
+
+        .img-home {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
