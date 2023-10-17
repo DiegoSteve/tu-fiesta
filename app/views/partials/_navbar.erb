@@ -1,6 +1,11 @@
 <nav>
     <div class="container-nav-devise">
         <p>Tu-Fiesta</p>
-        <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+        <div class="menu-devise">
+            <%= link_to "Tus eventos", class: "links"%>
+            <%= link_to "Perfil", class: "links"%>
+            <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+        </div>
+        
     </div>
 </nav>

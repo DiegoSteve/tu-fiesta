@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <% unless controller_name == 'sessions' || controller_name == 'home' || controller_name=='registrations'  %>
+      <%= render 'partials/navbar' %>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
