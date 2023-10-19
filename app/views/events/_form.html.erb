@@ -10,38 +10,45 @@
       </ul>
     </div>
   <% end %>
+  <div class="content-form">
+    <div class="left">
+      <div>
+        <%= form.label :Nombre_del_Evento, style: "display: block" %>
+        <%= form.text_field :name %>
+      </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+      <div>
+        <%= form.label :Lugar, style: "display: block" %>
+        <%= form.text_field :place %>
+      </div>
+
+      <div>
+        <%= form.label :Fecha, style: "display: block" %>
+        <%= form.date_field :date %>
+      </div>
+
+    </div>
+    <div class="right">
+      <div>
+        <%= form.label :Descripcion, style: "display: block" %>
+        <%= form.text_area :description %>
+      </div>
+      <div class="container-time">
+        <div class= "time-input">
+          <%= form.label :Hora_de_Inicio, style: "display: block" %>
+          <%= form.time_field :start_time %>
+        </div>
+
+        <div class= "time-input">
+          <%= form.label :Hora_Final, style: "display: block" %>
+          <%= form.time_field :end_time %>
+        </div>
+      </div>
+    
+    </div>
+  
   </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :place, style: "display: block" %>
-    <%= form.text_field :place %>
-  </div>
-
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.label :start_time, style: "display: block" %>
-    <%= form.time_field :start_time %>
-  </div>
-
-  <div>
-    <%= form.label :end_time, style: "display: block" %>
-    <%= form.time_field :end_time %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="create-event">
+      <%= form.submit %>
   </div>
 <% end %>
