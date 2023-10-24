@@ -10,36 +10,36 @@
       </ul>
     </div>
   <% end %>
-  <div class="content-form">
+  <div class="content-form content-form-edit">
     <div class="left">
-      <div>
+      <div class="form-main form-field">
         <%= form.label :Nombre_del_Evento, style: "display: block" %>
         <%= form.text_field :name %>
       </div>
 
-      <div>
+      <div class="form-main form-field">
         <%= form.label :Lugar, style: "display: block" %>
         <%= form.text_field :place %>
       </div>
 
-      <div>
+      <div class="form-main form-field">
         <%= form.label :Fecha, style: "display: block" %>
         <%= form.date_field :date %>
       </div>
 
     </div>
     <div class="right">
-      <div>
+      <div class="form-main form-field">
         <%= form.label :Descripcion, style: "display: block" %>
         <%= form.text_area :description %>
       </div>
       <div class="container-time">
-        <div class= "time-input">
+        <div class= "form-main time-input form-field">
           <%= form.label :Hora_de_Inicio, style: "display: block" %>
           <%= form.time_field :start_time %>
         </div>
 
-        <div class= "time-input">
+        <div class= "form-main time-input form-field">
           <%= form.label :Hora_Final, style: "display: block" %>
           <%= form.time_field :end_time %>
         </div>

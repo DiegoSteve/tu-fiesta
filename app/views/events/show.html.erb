@@ -7,10 +7,10 @@
     <%= render @event %>
 
     <div class="show-edit">
-      <%= link_to "Edit this event", edit_event_path(@event) %> |
-      <%= link_to "Back to events", events_path %>
+      <%= link_to "Editar Evento", edit_event_path(@event) %> |
+      <%= link_to "Regresar a Eventos", events_path %>
 
-      <%= button_to "Destroy this event", @event, method: :delete %>
+      <%= button_to "Eliminar Evento", @event, method: :delete %>
     </div>
   </div> 
 </div>

@@ -31,6 +31,11 @@
                 flex-direction: column;
                 justify-content: space-evenly;
 
+
+                .form-main {
+                    display: block;
+                }
+                
                 input {
                     width: 80%;
                 }
@@ -41,6 +46,11 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+
+
+                .form-main {
+                    display: block;
+                }
 
                 input {
                     width: 80%;
