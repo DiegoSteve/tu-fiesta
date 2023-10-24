@@ -1,23 +1,23 @@
-<p class="notice" >Inicio de Sesion Correctamente<%= notice %></p>
-
-<div class="container-events">
-  <div class="left">
-    <h1 class="title-event">Bienvenidos</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis rem dolorem eaque tempore quam commodi deserunt ipsam voluptatibus autem quisquam amet assumenda sapiente, mollitia culpa accusantium modi molestias eius.</p>
-
-    <div id="events">
-      <% @events.each do |event| %>
-        <%= render event %>
-        <p>
-          <%= link_to "Show this event", event %>
-        </p>
+<div class="container-index">
+  <div id="events">
+    <h1>TUS EVENTOS</h1>
+    <div class="container-events-all">
+      <% @events.each do |event| %> 
+        <a href="<%= event_path(event) %>">
+          <div class="event-card">
+            <h2><%= event.name %></h2> <!-- Muestra el nombre del evento -->   
+            <p>Organizado por: <%= "#{event.user.name} #{event.user.last_name}".camelcase %></p><!-- Muestra el organizador (nombre del usuario) -->   
+            <p>Fecha: <%= event.date %></p><!-- Muestra la fecha del evento -->    
+            <div class="place-guest">
+              <p>Lugar: <%= event.place %></p><!-- Muestra el lugar del evento -->  
+              <p>Número de invitados: <%= event.guests.count %></p><!-- Muestra el número de invitados -->
+            </div> 
+          </div> 
+        </a>
       <% end %>
     </div>
-
-    <%= link_to "Crear Evento", new_event_path, class:"button button-event" %>
-  </div>
-  <div class="right">
-    <%= image_tag ("photohomepage.png"), class:"img-home"%>
   </div>
 </div>
+
+
   

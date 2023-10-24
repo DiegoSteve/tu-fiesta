@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-    belongs_to :organizer, class_name: 'User', foreign_key: 'organizer_id'
+    belongs_to :user 
     has_many :guests, dependent: :destroy
 end

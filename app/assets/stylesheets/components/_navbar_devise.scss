@@ -3,14 +3,14 @@ nav {
     height: 7%;
 
     .container-nav-devise {
-        color: $main-pink;
-        height: 100%;
-        width: 100%;
-        font-size: 2em;
-        padding: 0 0 0 5%;
-        display: flex;
         align-items: center;
-        letter-spacing: 2px;
+        color: $main-pink;
+        display: flex;
         font-family: "berlinsans";
+        font-size: 2em;
+        height: 100%;
+        letter-spacing: 2px;
+        padding: 0 0 0 5%;
+        width: 100%;
     }
 }
