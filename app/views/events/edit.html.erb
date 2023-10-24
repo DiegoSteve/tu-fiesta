@@ -1,10 +1,18 @@
-<h1>Editing event</h1>
+<div class="container-show-event">
+  <div class="title-events">
+    <h1>DETALLE DE EVENTO</h1>
+  </div>
+  <div class="card-show-event">
+    <div class="content-form">
+     <%= render "form", event: @event %>
+    </div>
+   
+    <br>
 
-<%= render "form", event: @event %>
-
-<br>
-
-<div>
-  <%= link_to "Show this event", @event %> |
-  <%= link_to "Back to events", events_path %>
+    <div class="show-edit">
+      <%= link_to "Show this event", @event %> |
+      <%= link_to "Back to events", events_path %>
+    </div>
+  </div> 
 </div>
+

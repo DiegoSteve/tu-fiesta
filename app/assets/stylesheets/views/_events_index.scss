@@ -1,0 +1,50 @@
+.container-index {
+    height: 100%;
+    width: 100%;
+    @include center-flex-column;
+
+    #events {
+        height: 85%;
+        width: 90%;
+        font-family: 'Renogare-Regular';
+
+        h1 {
+            color: $main-pink;
+            font-family: 'berlinsans';
+            letter-spacing: 2px;
+            margin-bottom: 4%;
+        }
+
+        .container-events-all {
+           display: flex;
+           flex-direction: column;
+           height: 80%; 
+           max-height: 80%;
+           overflow-y: auto;
+
+           a {
+               margin-bottom: 5%;
+               text-decoration: none;
+           }
+            .event-card {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                background-color: $white-secondary;
+                border-radius: 10px;
+                box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+                margin-bottom: 5%;
+                padding: 1%;
+                color: $night;
+
+                .place-guest{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            
+        }
+    }
+}

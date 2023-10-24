@@ -27,7 +27,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def after_sign_in_path_for(resource)
     # Puedes personalizar la ruta de redirección aquí
-    events_path
+    homepage_path
   end
     
 end

@@ -1,0 +1,19 @@
+.content-form-edit {
+    width: 150%;
+    .form-field {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 5% 0%;
+
+        input {
+            width: 50%;
+        }
+
+        textarea {
+            width: 50%;
+        }
+    }
+
+}
+

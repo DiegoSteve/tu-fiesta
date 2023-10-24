@@ -12,5 +12,26 @@ nav {
         align-items: center;
         letter-spacing: 2px;
         font-family: "berlinsans";
+        justify-content: space-between;
+
+        .menu-devise {
+            display: flex;
+            font-size: .5em;
+            justify-content: space-around;
+            width: 40%;
+
+            a {
+                color: $main-pink;
+            }
+
+            button {
+                border: none;
+                background:none;
+                color: $main-pink;
+                font-size: 1em;
+                font-family: "berlinsans";
+                text-decoration: underline;
+            }
+        }
     }
 }

@@ -4,7 +4,10 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    @events = current_user.events
+  end
+
+  def homepage
   end
 
   # GET /events/1 or /events/1.json
@@ -23,9 +26,10 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
-
+   
     respond_to do |format|
       if @event.save
+
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
@@ -66,6 +70,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:name, :description, :place, :date, :start_time, :end_time)
+      params.require(:event).permit(:name, :description, :place, :date, :start_time, :end_time).merge(user_id: current_user.id)
     end
 end

@@ -1,32 +1,45 @@
-<div id="<%= dom_id event %>">
-  <p>
-    <strong>Name:</strong>
-    <%= event.name %>
-  </p>
+<div class="container-show">
+  <div id="<%= dom_id event %>" class=" info-event">
+    <p>
+      <strong>Nombre del evento: </strong>
+      <%= event.name %>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </p>
+    <p><!-- Muestra el organizador (nombre del usuario) -->   
+      <strong>Organizado por: </strong>
+      <%= "#{event.user.name} #{event.user.last_name}".camelcase %>
+    </p>
 
-  <p>
-    <strong>Place:</strong>
-    <%= event.place %>
-  </p>
+    <p>
+      <strong>Lugar: </strong>
+      <%= event.place %>
+    </p>
 
-  <p>
-    <strong>Date:</strong>
-    <%= event.date %>
-  </p>
+    <p>
+      <strong>Fecha: </strong>
+      <%= event.date %>
+    </p>
 
-  <p>
-    <strong>Start time:</strong>
-    <%= event.start_time %>
-  </p>
+    <p>
+      <strong>Hora: </strong>
+      <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %>
+    </p>
 
-  <p>
-    <strong>End time:</strong>
-    <%= event.end_time %>
-  </p>
+    <p>
+      <strong>Descripción: </strong>
+      <%= event.description %>
+    </p>
+
+    <p>
+      <strong>Invitados: </strong>
+      <%= event.guests.count %>
+    </p>
+
+    <!--<p>
+      <strong>End time:</strong>
+      <%= event.end_time %>
+    </p>-->
+
+  </div>
 
 </div>

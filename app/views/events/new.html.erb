@@ -1,9 +1,17 @@
-<h1>New event</h1>
+<div class="container-new-event">
+  <div class="container-form">
+    <h1>Tú Próximo Evento</h1>
+    <%= render "form", event: @event %>
 
-<%= render "form", event: @event %>
+    <br>
 
-<br>
+    <div class="back-events">
+      <%= link_to "Back to events", events_path %>
+    </div>
+  </div>
 
-<div>
-  <%= link_to "Back to events", events_path %>
 </div>
+
+
+
+

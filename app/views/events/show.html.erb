@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
+<div class="container-show-event">
+  <div class="title-events">
+    <h1>DETALLE DE EVENTO</h1>
+  </div>
+  <div class="card-show-event">
+    <%= render @event %>
 
-<%= render @event %>
+    <div class="show-edit">
+      <%= link_to "Editar Evento", edit_event_path(@event) %> |
+      <%= link_to "Regresar a Eventos", events_path %>
 
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
-
-  <%= button_to "Destroy this event", @event, method: :delete %>
+      <%= button_to "Eliminar Evento", @event, method: :delete %>
+    </div>
+  </div> 
 </div>
