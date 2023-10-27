@@ -12,31 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :Nombre, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
+    <%= form.label :Correo, style: "display: block" %>
     <%= form.text_field :email %>
   </div>
 
   <div>
-    <%= form.label :telephone, style: "display: block" %>
+    <%= form.label :Teléfono, style: "display: block" %>
     <%= form.text_field :telephone %>
   </div>
 
   <div>
-    <%= form.label :kinship, style: "display: block" %>
-    <%= form.text_field :kinship %>
+    <%= form.label :Parentezco, style: "display: block" %>
+    <%= form.select :kinship, ['Amigo', 'Papá', 'Mamá', 'Abuela', 'Abuelo', 'Amiga', 'Tio', 'Tia', 'Conocid@', 'Hermano', 'Hermana'], prompt: 'Selecciona el parentesco' %>
   </div>
 
   <div>
-    <%= form.label :table, style: "display: block" %>
+    <%= form.label :Mesa, style: "display: block" %>
     <%= form.number_field :table %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Crear Invitado"%>
   </div>
 <% end %>

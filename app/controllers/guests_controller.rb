@@ -1,9 +1,10 @@
 class GuestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_guest, only: %i[ show edit update destroy ]
 
   # GET /guests or /guests.json
   def index
-    @guests = Guest.all
+    @guests = current_user.guests
   end
 
   # GET /guests/1 or /guests/1.json
