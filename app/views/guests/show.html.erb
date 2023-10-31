@@ -1,10 +1,17 @@
 <p style="color: green"><%= notice %></p>
+<div class="container-show-guest">
+  <div class="title-guest">
+    <h1>Detalle de Invitado</h1>
+  </div>
+  <div class="card-show-guest">
+    <%= render @guest %>
 
-<%= render @guest %>
-
-<div>
-  <%= link_to "Edit this guest", edit_guest_path(@guest) %> |
-  <%= link_to "Back to guests", guests_path %>
-
-  <%= button_to "Destroy this guest", @guest, method: :delete %>
+    <div class="show-guest">
+      <%= link_to "Editar Invitado", edit_guest_path(@guest) %> |
+      <%= link_to "Volver a Invitados", event_guests_path(@event) if @event.present? %>
+      <%= button_to "Eliminar Invitado", @guest, method: :delete %>
+    </div>
+  </div>
 </div>
+
+

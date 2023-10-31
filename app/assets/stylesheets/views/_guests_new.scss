@@ -31,7 +31,35 @@
                 input {
                     width:100%;
                 }
-                
+                select {
+                    width: 100%;
+                }
+
+                .form-input-guest {
+                    margin-bottom: 5%;
+                    display: block;
+                    width: 100%;
+                }
+
+                .create-guest {
+                    display: flex;
+                    justify-content: center;
+
+                    input {
+                        background-color: $main-pink;
+                        border-radius: 10px;
+                        border: none;
+                        color: $principal-night;
+                        font-size: 20px;
+                        font-weight: 400;
+                        height: 100%;
+                        width: 80%;
+                        font-family: "Renogare-Regular";
+                    }
+                    
+                }
+
+
             }
             h1 {
                 margin-bottom: 10%;

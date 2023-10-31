@@ -11,32 +11,37 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form-input-guest form-input-guest-edit input-edit-guest">
     <%= form.label :Nombre, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class="form-input-guest form-input-guest-edit input-edit-guest">
     <%= form.label :Correo, style: "display: block" %>
     <%= form.text_field :email %>
   </div>
 
-  <div>
+  <div class="form-input-guest form-input-guest-edit input-edit-guest">
     <%= form.label :Teléfono, style: "display: block" %>
     <%= form.text_field :telephone %>
   </div>
 
-  <div>
+  <div class="form-input-guest form-input-guest-edit input-edit-guest">
     <%= form.label :Parentezco, style: "display: block" %>
     <%= form.select :kinship, ['Amigo', 'Papá', 'Mamá', 'Abuela', 'Abuelo', 'Amiga', 'Tio', 'Tia', 'Conocid@', 'Hermano', 'Hermana'], prompt: 'Selecciona el parentesco' %>
   </div>
 
-  <div>
+  <div class="form-input-guest form-input-guest-edit input-edit-guest">
     <%= form.label :Mesa, style: "display: block" %>
     <%= form.number_field :table %>
   </div>
 
-  <div>
-    <%= form.submit "Crear Invitado"%>
+  <div class="form-input-guest input-edit-guest">
+    <%= form.label :event_id %>
+    <%= form.collection_select :event_id, Event.all, :id, :name %>
+  </div>
+
+  <div class="create-guest">
+    <%= form.submit "Registrar"%>
   </div>
 <% end %>

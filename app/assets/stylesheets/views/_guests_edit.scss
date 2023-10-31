@@ -1,0 +1,19 @@
+.form-input-guest-edit {
+        display: flex;
+}
+.show-guest-edit {
+    display: flex;
+    align-items: flex-end;
+}
+.input-edit-guest {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    margin: 3.5% 0%;
+    justify-content: space-between;
+        
+
+    select {
+        width: 49%;
+    }
+}

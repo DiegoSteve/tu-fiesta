@@ -8,8 +8,8 @@
 
     <div class="show-edit">
       <%= link_to "Editar Evento", edit_event_path(@event) %> |
-      <%= link_to "Regresar a Eventos", events_path %>
-
+      <%= link_to "Regresar a Eventos", events_path %> |
+      <%= link_to "Ver invitados", event_guests_path(@event) %>
       <%= button_to "Eliminar Evento", @event, method: :delete %>
     </div>
   </div> 

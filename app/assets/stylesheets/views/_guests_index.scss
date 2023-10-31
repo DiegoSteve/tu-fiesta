@@ -1,0 +1,49 @@
+.container-list {
+    height: 100%;
+    width: 100%;
+    @include center-flex-column;
+
+    .container-list-group {
+        height: 80%;
+        width: 90%;
+
+        h1 {
+            font-family: "berlinsans";
+            color: $main-pink;
+            margin-bottom: 3%;
+            letter-spacing: 2px;
+        }
+
+        .guest-list {
+            min-height: 80%;
+            overflow-y: auto;
+            height: 80%;
+            width: 100%;
+
+            .table-guests {
+                width: 100%;
+                height: 100%;
+                border: 1px $table-grey solid;
+                font-family: "Renogare-Regular";
+
+                thead {
+                    height: 10%;
+                    background-color: $column-grey;
+                    th {
+                        border: 1px $table-grey solid;
+                        width: 30%;
+                    }
+                }
+
+
+                td {
+                    border: 1px $table-grey solid; 
+                    padding: 1%;
+                }
+    
+            }  
+        }
+
+      
+    }
+}

@@ -5,10 +5,14 @@ class GuestsController < ApplicationController
   # GET /guests or /guests.json
   def index
     @guests = current_user.guests
+    @event = Event.find(params[:event_id]) # Obtén el evento específico
+    @guests = @event.guests # Obtén todos los invitados de ese evento
   end
 
   # GET /guests/1 or /guests/1.json
   def show
+    @guest = Guest.find(params[:id])
+    @event = @guest.event if @guest # Accediendo al evento asociado con el invitado
   end
 
   # GET /guests/new
@@ -18,6 +22,8 @@ class GuestsController < ApplicationController
 
   # GET /guests/1/edit
   def edit
+    @guest = Guest.find(params[:id])
+    @event = @guest.event # Obtén el evento asociado al invitado
   end
 
   # POST /guests or /guests.json
@@ -66,6 +72,6 @@ class GuestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def guest_params
-      params.require(:guest).permit(:name, :email, :telephone, :kinship, :table)
+      params.require(:guest).permit(:name, :email, :telephone, :kinship, :table, :event_id)
     end
 end

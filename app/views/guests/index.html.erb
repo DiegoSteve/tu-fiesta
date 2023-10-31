@@ -1,14 +1,34 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>TUS INVITADOS</h1>
+<div class="container-list">
+  <div class="container-list-group">
+    <h1>MIS INVITADOS</h1>
+    <div class="guest-list">
+      <table class="table-guests">
+        <thead>
+          <tr>
+            <th >Nombre</th>
+            <th >Correo</th>
+            <th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @guests.each do |guest| %>
+              <tr>
+                <td><%= guest.name %></td>
+                <td><%= guest.email %></td>
+                <td><%= guest.telephone %></td>
+                <td>
+                  <%= link_to "Ver Invitado", guest, class: "guest-link" %>
+                </td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>  
+  </div>
 
-<div id="guests">
-  <% @guests.each do |guest| %>
-    <%= render guest %>
-    <p>
-      <%= link_to "Show this guest", guest %>
-    </p>
-  <% end %>
 </div>
 
-<%= link_to "New guest", new_guest_path %>
+
+<%= link_to "Nuevo invitado", new_guest_path %>
