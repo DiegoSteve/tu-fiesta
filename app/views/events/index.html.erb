@@ -1,6 +1,7 @@
 <div class="container-index">
   <div id="events">
     <h1>TUS EVENTOS</h1>
+    <%= render 'partials/bar_search_event' %>
     <div class="container-events-all">
       <% @events.each do |event| %> 
         <a href="<%= event_path(event) %>">
@@ -17,6 +18,7 @@
       <% end %>
     </div>
   </div>
+  <%= link_to "Crear Evento", new_event_path %>
 </div>
 
 

@@ -7,10 +7,14 @@
     <%= render @event %>
 
     <div class="show-edit">
-      <%= link_to "Editar Evento", edit_event_path(@event) %> |
+      <%= link_to edit_event_path(@event) do %>
+        <%= image_tag('edit2.png', class: 'icon-img') %>
+      <% end %>
       <%= link_to "Regresar a Eventos", events_path %> |
       <%= link_to "Ver invitados", event_guests_path(@event) %>
-      <%= button_to "Eliminar Evento", @event, method: :delete %>
+      <%= button_to @event, method: :delete, class:"button-delete", data: { confirm: "¿Estás seguro?" } do %>
+        <%= image_tag('delete.png', class: 'icon-img') %>
+      <% end %>
     </div>
   </div> 
 </div>

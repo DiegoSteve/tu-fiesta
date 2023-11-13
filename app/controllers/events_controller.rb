@@ -4,7 +4,13 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = current_user.events
+    if params[:search].present?
+      @events = current_user.events.where('LOWER(name) LIKE ?', "%#{params[:search].downcase}%")
+      puts "SE ENCONTRÓ"
+    else
+      @events = current_user.events
+      puts "NO SE ENCONTRÓ"
+    end
   end
 
   def homepage

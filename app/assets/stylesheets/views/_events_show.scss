@@ -40,5 +40,10 @@
     .show-edit {
         display: flex;
         align-items: flex-end;
+
+        .button-delete {
+            border: none;
+            background: none;
+        }
     }
 }

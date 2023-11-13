@@ -32,6 +32,10 @@ nav {
                 font-family: "berlinsans";
                 text-decoration: underline;
             }
+
+            .links.active {
+                color: $main-white;
+            }
         }
     }
 }

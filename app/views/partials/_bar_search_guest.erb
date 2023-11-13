@@ -1,0 +1,6 @@
+<div class="bar-search">
+    <%= form_tag(guests_path, method: "get",  class:"form-search") do %>
+        <%= text_field_tag(:search, params[:search], class:"text-search", placeholder: "Buscar Invitado" ) %>
+        <%= submit_tag(("Buscar"),  class:"button-search") %>
+    <% end %>
+</div>

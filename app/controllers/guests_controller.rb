@@ -4,9 +4,22 @@ class GuestsController < ApplicationController
 
   # GET /guests or /guests.json
   def index
-    @guests = current_user.guests
-    @event = Event.find(params[:event_id]) # Obtén el evento específico
-    @guests = @event.guests # Obtén todos los invitados de ese evento
+    if params[:event_id].present?
+      @event = Event.find(params[:event_id])
+      @guests = @event.guests
+      puts "ENTRO"
+    else
+      @guests = current_user.guests
+    end
+    
+    if params[:search].present?
+      search_query = "%#{params[:search].downcase}%"
+      @guests = @guests.where('LOWER(guests.name) LIKE ? OR LOWER(guests.email) LIKE ? OR LOWER(guests.telephone) LIKE ?',
+                        search_query, search_query, search_query)
+      puts "SE ENCONTRÓ"
+    else
+      puts "NO SE ENCONTRÓ"
+    end
   end
 
   # GET /guests/1 or /guests/1.json

@@ -7,9 +7,13 @@
     <%= render @guest %>
 
     <div class="show-guest">
-      <%= link_to "Editar Invitado", edit_guest_path(@guest) %> |
+      <%= link_to edit_guest_path(@guest) do %>
+        <%= image_tag('edit2.png', class: 'icon-img') %>
+      <% end %>
       <%= link_to "Volver a Invitados", event_guests_path(@event) if @event.present? %>
-      <%= button_to "Eliminar Invitado", @guest, method: :delete %>
+      <%= button_to @guest, method: :delete , class:"button-delete", data: { confirm: "¿Estás seguro?" } do %>
+        <%= image_tag('delete.png', class: 'icon-img') %>
+      <% end %>
     </div>
   </div>
 </div>
