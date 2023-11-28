@@ -14,6 +14,9 @@
     resources :events do
       resources :guests
     end
+
+    resources :invitations, only: [:new, :create]
+
     get 'home/index'
     get 'homepage', to: 'events#homepage'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

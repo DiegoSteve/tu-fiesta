@@ -26,6 +26,20 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+ 
+  if Rails.env.development?
+    config.mailer_sender = 'diegosteve123321@gmail.com'  # Reemplaza con tu dirección de correo electrónico
+    config.mailer = 'ActionMailer::Base'
+    config.mailer.smtp_settings = {
+      address: 'smtp.mailtrap.io',
+      port: 2525,
+      domain: 'tu_domain.com',  # Reemplaza con tu dominio
+      user_name: 'bc777b5b4fa824',
+      password: 'b92fa61ae5c2ad',
+      authentication: :cram_md5
+    }
+  end
+  
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
