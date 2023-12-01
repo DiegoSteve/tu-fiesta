@@ -7,11 +7,14 @@ class InvitationsController < ApplicationController
       # Envía el correo electrónico de invitación
       InvitationMailer.send_invitation(@invitation).deliver_now
       flash[:success] = "Invitación enviada correctamente."
-      redirect_to @event
+      redirect_to @event 
     else
       flash.now[:error] = "Error al enviar la invitación."
       render 'events/show'
     end
+  end
+
+  def not_available
   end
 
   private

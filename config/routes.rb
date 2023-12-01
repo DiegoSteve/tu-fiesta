@@ -19,6 +19,10 @@
 
     get 'home/index'
     get 'homepage', to: 'events#homepage'
+
+    # config/routes.rb
+    get '/not_available', to: 'invitations#not_available', as: :not_available
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
