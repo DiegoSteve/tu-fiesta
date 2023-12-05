@@ -1,4 +1,7 @@
 <h1>¡Has sido invitado a TuEvento!</h1>
-<p>¡Hola <%= @user.name %>!</p>
-<p>Has sido invitado a un evento especial en TuEvento. Haz clic en el siguiente enlace para confirmar tu asistencia:</p>
-<p><%= link_to 'Confirmar Asistencia', confirmation_url(@invitation.confirmation_token) %></p>
+<% if @guest %>
+  <p>¡Hola <%= @guest.name %>!</p>
+    <p>Has sido invitado a un evento especial en TuEvento. Haz clic en el siguiente enlace para confirmar tu asistencia:</p>
+<% else %>
+    <p>¡Error! No se encontró el invitado.</p>
+<% end %>

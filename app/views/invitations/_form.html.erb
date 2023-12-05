@@ -1,0 +1,22 @@
+<%= form_with(model: [@event, @invitation], local: true) do |form| %>
+  <div>
+    <%= form.label :guest, 'Invitado' %>
+    <%= form.collection_select :guest_id, @event.guests, :id, :name, prompt: 'Selecciona un invitado' %>
+  </div>
+
+  <div>
+    <%= form.label :confirmation_status, 'Estado de Confirmación' %>
+    <%= form.text_field :confirmation_status %>
+  </div>
+
+  <div>
+    <% if @guest && @event %>
+        <%= form.hidden_field :guest_id, value: @guest.id %>
+        <%= form.hidden_field :event_id, value: @event.id %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit 'Enviar Invitación' %>
+  </div>
+<% end %>

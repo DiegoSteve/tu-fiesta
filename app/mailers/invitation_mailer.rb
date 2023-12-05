@@ -1,8 +1,8 @@
 class InvitationMailer < ApplicationMailer
-    def send_invitation(invitation)
+    def send_invitation(invitation, event)
         @invitation = invitation
-        @event = invitation.event
+        @event = event
         @guest = invitation.guest
-        mail(to: @invitation.email, subject: 'Invitación a TuEvento')
-    end
+        mail(to: @guest.email, subject: "Invitación a Evento")
+      end
 end

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: %i[ show edit update destroy ]
+  
 
   # GET /events or /events.json
   def index
@@ -20,6 +21,14 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @guests = @event.guests
+    if @event.caducado?
+      flash.now[:notice] = 'Este evento ha caducado.'
+    else
+      flash.now[:notice] = 'Este evento está activo.'
+    end
+
+    @invitation = Invitation.new(event: @event)
+    @event.guests.build if @event.guests.empty?
   end
 
   # GET /events/new

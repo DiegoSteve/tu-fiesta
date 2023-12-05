@@ -31,12 +31,14 @@ class GuestsController < ApplicationController
   # GET /guests/new
   def new
     @guest = Guest.new
+    @current_event_id = @guest.event_id
   end
 
   # GET /guests/1/edit
   def edit
     @guest = Guest.find(params[:id])
     @event = @guest.event # Obtén el evento asociado al invitado
+    @current_event_id = @guest.event_id
   end
 
   # POST /guests or /guests.json
@@ -45,7 +47,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to guest_url(@guest), notice: "Guest was successfully created." }
+        format.html { redirect_to guest_url(@guest), notice: "Invitado creado." }
         format.json { render :show, status: :created, location: @guest }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,7 +60,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to guest_url(@guest), notice: "Guest was successfully updated." }
+        format.html { redirect_to guest_url(@guest), notice: "Invitado actualizado." }
         format.json { render :show, status: :ok, location: @guest }
       else
         format.html { render :edit, status: :unprocessable_entity }
