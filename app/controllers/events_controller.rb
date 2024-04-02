@@ -21,6 +21,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @guests = @event.guests
+    @current_user = current_user 
     if @event.caducado?
       flash.now[:notice] = 'Este evento ha caducado.'
     else

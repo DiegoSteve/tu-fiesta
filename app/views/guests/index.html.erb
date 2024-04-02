@@ -1,35 +1,83 @@
+<!-- app/views/guests/index.html.erb -->
+
 <p style="color: green"><%= notice %></p>
 
 <div class="container-list">
   <div class="container-list-group">
     <h1>MIS INVITADOS</h1>
-   <%= render 'partials/bar_search_guest' %>
+    <%= render 'partials/bar_search_guest' %>
     <div class="guest-list">
       <table class="table-guests">
         <thead>
           <tr>
-            <th >Nombre</th>
-            <th >Correo</th>
+            <th>Nombre</th>
+            <th>Correo</th>
             <th>Teléfono</th>
+            <th>Parentezco</th>
+            <th>Mesa</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <% @guests.each do |guest| %>
-              <tr>
-                <td><%= guest.name %></td>
-                <td><%= guest.email %></td>
-                <td><%= guest.telephone %></td>
-                <td>
-                  <%= link_to "Ver Invitado", guest, class: "guest-link" %>
-                </td>
-              </tr>
+            <tr>
+              <td><%= guest.name %></td>
+              <td><%= guest.email %></td>
+              <td><%= guest.telephone %></td>
+              <td><%= guest.kinship %></td>
+              <td><%= guest.table %></td>
+              <td>
+                <%= link_to "Ver Invitado", guest, class: "guest-link" %>
+              </td>
+            </tr>
           <% end %>
+          <!-- Agrega una fila para el nuevo invitado -->
+          <tr>
+            <td colspan="6"> <!-- Ajusta el colspan según la cantidad de columnas en tu tabla -->
+              <%= form_with(model: Guest.new, url: guests_path, remote: true) do |form| %>
+                <div class="form-index-table">
+                  <div class="form-index">
+                    <%= form.label :Nombre, style: "display: block" %>
+                    <%= form.text_field :name %>
+                  </div>
+
+                  <div class="form-index">
+                    <%= form.label :Correo, style: "display: block" %>
+                    <%= form.text_field :email %>
+                  </div>
+
+                  <div class="form-index">
+                    <%= form.label :Teléfono, style: "display: block" %>
+                    <%= form.text_field :telephone %>
+                  </div>
+
+                  <div class="form-index">
+                    <%= form.label :Parentezco, style: "display: block" %>
+                    <%= form.select :kinship, ['Amigo', 'Papá', 'Mamá', 'Abuela', 'Abuelo', 'Amiga', 'Tio', 'Tia', 'Conocid@', 'Hermano', 'Hermana'], prompt: 'Selecciona el parentezco' %>
+                  </div>
+
+                  <div class="form-index">
+                    <%= form.label :Mesa, style: "display: block" %>
+                    <%= form.number_field :table %>
+                  </div>
+
+                  <div class="form-index form-blank">
+                    <% if params[:event_id].blank? %>
+                      <%= form.label :event_id %>
+                      <%= form.collection_select :event_id, current_user.events, :id, :name, { class: 'form-control' } %>
+                    <% else %>
+                      <%= form.hidden_field :event_id, value: params[:event_id] %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="submit-index">
+                  <%= form.submit "Registrar", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+            </td>
+          </tr>
         </tbody>
       </table>
-    </div>  
+    </div>
   </div>
-  <%= link_to "Nuevo invitado", new_guest_path %><%= link_to "Enviar Invitación", not_available_path %>
 </div>
-
-
-

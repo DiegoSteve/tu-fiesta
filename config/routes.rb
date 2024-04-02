@@ -31,6 +31,24 @@
       post 'send_invitations', to: 'invitations#send_invitations'
     end
 
+    # config/routes.rb
+    resources :events do
+      member do
+        get 'event_report', to: 'reports#event_report', format: :pdf
+      end
+    end
+
+    resources :invitations do
+      member do
+        get :confirm
+      end
+    end
+
+    resources :events do
+      member do
+        post 'confirm_attendance'
+      end
+    end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

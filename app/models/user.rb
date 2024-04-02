@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :events
   has_many :guests, through: :events
+  has_many :invitations
+
+  def confirmed_attendance?(event)
+    invitations.exists?(event: event, confirmed: true)
+  end  
 end

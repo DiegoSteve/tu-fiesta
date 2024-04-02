@@ -1,9 +1,11 @@
 class GuestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_guest, only: %i[ show edit update destroy ]
+  before_action :initialize_guest, only: [:index, :create] # Cambié el nombre del método
 
   # GET /guests or /guests.json
   def index
+    @guests = Guest.where(event_id: params[:event_id])
     if params[:event_id].present?
       @event = Event.find(params[:event_id])
       @guests = @event.guests
@@ -89,4 +91,10 @@ class GuestsController < ApplicationController
     def guest_params
       params.require(:guest).permit(:name, :email, :telephone, :kinship, :table, :event_id)
     end
+
+    # Renombré el método para evitar conflictos con el antes mencionado
+    def initialize_guest
+      @guest = Guest.new
+    end
+
 end

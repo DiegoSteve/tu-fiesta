@@ -1,7 +1,21 @@
-<h1>¡Has sido invitado a TuEvento!</h1>
+<h1>¡Has sido invitado a <%= @event.name %>!</h1>
+
 <% if @guest %>
   <p>¡Hola <%= @guest.name %>!</p>
-    <p>Has sido invitado a un evento especial en TuEvento. Haz clic en el siguiente enlace para confirmar tu asistencia:</p>
+  <p>Has sido invitado a un evento especial en <%= @event.name %></p>
+
+  <ul>
+    <li><strong>Descripción:</strong> <%= @event.description %></li>
+    <li><strong>Fecha:</strong> <%= @event.date.strftime("%d/%m/%Y") %></li>
+    <li><strong>Hora de inicio:</strong> <%= @event.start_time.strftime("%H:%M") %></li>
+    <li><strong>Hora de fin:</strong> <%= @event.end_time.strftime("%H:%M") %></li>
+    <li><strong>Lugar:</strong> <%= @event.place %></li>
+    <!-- Agrega más detalles según sea necesario -->
+  </ul>
+  <p>
+    Por favor, confirma tu asistencia haciendo clic en el siguiente enlace:
+    <%= link_to 'Confirmar Asistencia', confirm_invitation_url(@invitation.invitation_token) %>
+  </p> 
 <% else %>
-    <p>¡Error! No se encontró el invitado.</p>
+  <p>¡Error! No se encontró el invitado.</p>
 <% end %>
