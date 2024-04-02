@@ -6,6 +6,7 @@
     .container-list-group {
         height: 80%;
         width: 90%;
+        position: absolute;
 
         h1 {
             font-family: "berlinsans";
@@ -31,7 +32,6 @@
                     background-color: $column-grey;
                     th {
                         border: 1px $table-grey solid;
-                        width: 30%;
                     }
                 }
 
@@ -40,7 +40,38 @@
                     border: 1px $table-grey solid; 
                     padding: 1%;
                 }
-    
+
+                .form-index {
+                    display: inline-block;
+                    border: 1px $table-grey solid; 
+                    padding: 1%;
+                    width: 19.2%;
+                }
+
+                .form-blank {
+                    display: none;
+                }
+
+                #guest_kinship {
+                    width: 100%;
+                }
+                
+                #guest_event_id {
+                    width: 100%;
+                }
+
+                input {
+                    width: 100%;
+                }
+
+                .form-index-table {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .submit-index {
+                    margin-top: 1%;
+                }
             }  
         }
 

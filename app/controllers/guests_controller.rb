@@ -1,9 +1,11 @@
 class GuestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_guest, only: %i[ show edit update destroy ]
+  before_action :initialize_guest, only: [:index, :create] # Cambié el nombre del método
 
   # GET /guests or /guests.json
   def index
+    @guests = Guest.where(event_id: params[:event_id])
     if params[:event_id].present?
       @event = Event.find(params[:event_id])
       @guests = @event.guests
@@ -31,12 +33,14 @@ class GuestsController < ApplicationController
   # GET /guests/new
   def new
     @guest = Guest.new
+    @current_event_id = @guest.event_id
   end
 
   # GET /guests/1/edit
   def edit
     @guest = Guest.find(params[:id])
     @event = @guest.event # Obtén el evento asociado al invitado
+    @current_event_id = @guest.event_id
   end
 
   # POST /guests or /guests.json
@@ -45,7 +49,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to guest_url(@guest), notice: "Guest was successfully created." }
+        format.html { redirect_to guest_url(@guest), notice: "Invitado creado." }
         format.json { render :show, status: :created, location: @guest }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,7 +62,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to guest_url(@guest), notice: "Guest was successfully updated." }
+        format.html { redirect_to guest_url(@guest), notice: "Invitado actualizado." }
         format.json { render :show, status: :ok, location: @guest }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -87,4 +91,10 @@ class GuestsController < ApplicationController
     def guest_params
       params.require(:guest).permit(:name, :email, :telephone, :kinship, :table, :event_id)
     end
+
+    # Renombré el método para evitar conflictos con el antes mencionado
+    def initialize_guest
+      @guest = Guest.new
+    end
+
 end

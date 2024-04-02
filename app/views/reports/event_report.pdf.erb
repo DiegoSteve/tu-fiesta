@@ -1,0 +1,16 @@
+<h1>Informe de Eventos</h1>
+
+<div>
+  <h2><%= @event.name %></h2>
+  <p><strong>Descripción:</strong> <%= @event.description %></p>
+  <p><strong>Fecha:</strong> <%= @event.date %></p>
+  <p><strong>Hora de inicio:</strong> <%= @event.start_time %></p>
+  <p><strong>Hora de fin:</strong> <%= @event.end_time %></p>
+
+  <h3>Invitados:</h3>
+  <% @event.guests.each do |guest| %>
+    <p><strong>Nombre del Invitado:</strong> <%= guest.name %></p>
+    <p><strong>Correo del Invitado:</strong> <%= guest.email %></p>
+  <% end %>
+</div>
+<hr>

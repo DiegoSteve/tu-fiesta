@@ -1,4 +1,3 @@
-<p style="color: green"><%= notice %></p>
 <div class="container-show-event">
   <div class="title-events">
     <h1>DETALLE DE EVENTO</h1>
@@ -17,4 +16,6 @@
       <% end %>
     </div>
   </div> 
+
+  <%= render 'invitations/form', event: @event %>
 </div>

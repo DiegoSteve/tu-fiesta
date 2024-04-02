@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @pdf_title || 'PDF Report' %></title>
+  <%= wicked_pdf_stylesheet_link_tag 'application', 'pdf/pdf' %>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

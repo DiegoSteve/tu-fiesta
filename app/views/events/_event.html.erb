@@ -22,7 +22,11 @@
 
     <p>
       <strong>Hora: </strong>
-      <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %>
+      <% if event.start_time.present? && event.end_time.present? %>
+        <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %>
+      <% else %>
+        Horario no disponible
+      <% end %>
     </p>
 
     <p>
